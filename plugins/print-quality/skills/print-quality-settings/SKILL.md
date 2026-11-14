@@ -84,4 +84,9 @@ The header only shows what was requested. To confirm the toolpaths changed:
 seams, top surfaces and ironing, overhangs, supports, strength, travel, fuzzy skin) with setting
 names, when not to use each, and sources, plus common advice that is wrong or only true in some
 cases. Read it when the user wants more than the five rules or asks about a specific problem.
+
+`references/pla-types.md` has starting points for 10 PLA blends (basic, high-speed, matte,
+silk, PLA+, marble, wood, carbon fibre, glow, multi-colour): nozzle temperature, max volumetric
+flow, and which ones need a hardened nozzle. Read it when the user names a filament type or asks
+why a speciality PLA prints badly.
 For calibration steps, use the `print-calibration` skill.
