@@ -43,6 +43,17 @@ table (also at the end of the G-code) saves the arithmetic. Measure from the bed
   from 25 mm with the default ramp is the 11 mm³/s band, so set about 10.
 - The limit is per filament and per hotend. Re-run it for a new filament type or a new hotend.
 
+## Step 3 in practice: pressure advance
+
+- Use a test that **changes speed**, such as OrcaSlicer's PA pattern or line test. A single-wall
+  vase tower at constant speed is a weak test: in real testing a tower ramped from K 0 to 0.08 at
+  100 mm/s and 1000 mm/s² came out with identical corners from bottom to top.
+- **No visible difference is a valid result.** Printers with gentle acceleration (around
+  500-1000 mm/s²) build little pressure to correct. Leave pressure advance off rather than
+  guessing a value, especially on Marlin where linear advance can clash with stealthChop.
+- In a vase-mode test, one corner may look serrated all the way up. That is where each spiral
+  loop starts, not a pressure advance effect.
+
 ## Notes that trip people up
 
 - **Pressure advance on Marlin printers** only works if the firmware was built with
