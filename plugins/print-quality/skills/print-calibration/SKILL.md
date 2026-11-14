@@ -18,6 +18,31 @@ order wastes prints. OrcaSlicer has most of these tests under its **Calibration*
 | 5 | Retraction | Retraction tower after steps 3 and 4. Direct drive is usually 0.5 to 1.5 mm, Bowden longer. | `retraction_length`, `retraction_speed` |
 | 6 | Tolerance | Tolerance test last. Fix tight holes with hole compensation, not with flow. | `xy_hole_compensation`, `xy_contour_compensation` |
 
+## Step 2 in detail: max volumetric flow
+
+**Making the test.** In OrcaSlicer's GUI use Calibration > Max flowrate. Without the GUI (other
+slicers, or command-line slicing), use `scripts/make_maxflow_test.py` in this skill's folder:
+
+1. Slice a cylinder about 36 mm wide and 66 mm tall in **spiral vase mode**: 3 bottom layers,
+   0.28 mm layers, outer wall line width about 0.5 mm, **arc fitting off**.
+2. `python scripts/make_maxflow_test.py vase.gcode maxflow_test.gcode`
+   It rewrites the speeds so flow starts at 6 mm³/s at 2 mm and rises 1 mm³/s every 4.5 mm
+   (change with `--start`, `--step`, `--band`), shows the current flow on the printer screen,
+   prints a height-to-flow table, and refuses to write a file that would need more than
+   300 mm/s (`--max-speed`). Relative and absolute extrusion both work.
+
+**Reading it.** Flow at height h is `start + step * floor((h - z_start) / band)`; the script's
+table (also at the end of the G-code) saves the arithmetic. Measure from the bed with a ruler.
+
+- Look for the lowest height where the wall turns matte, fuzzy, thin, wavy or gappy. A camera at
+  a distance is not good enough; check it in hand, all the way round.
+- **Rough on only some sides** (often two opposite sides) means a direction-related limit as well
+  as melting: the bed shaking on a bed-slinger, or the part fan cooling one side more. A pure melt
+  limit shows all the way round at the same height. Either way, use the **lowest** onset you find.
+- Set `filament_max_volumetric_speed` 10 to 20% below the flow of that band. Example: roughness
+  from 25 mm with the default ramp is the 11 mm³/s band, so set about 10.
+- The limit is per filament and per hotend. Re-run it for a new filament type or a new hotend.
+
 ## Notes that trip people up
 
 - **Pressure advance on Marlin printers** only works if the firmware was built with

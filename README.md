@@ -24,7 +24,9 @@ example: a scarf length of 0 silently turns the scarf off), how to check the G-c
 changed, and about 20 more vetted tips with sources, plus common advice that is wrong.
 
 **`print-calibration` skill.** The calibration order (first layer, temperature, max volumetric
-speed, pressure advance, flow, retraction, tolerance) and how to judge each test.
+speed, pressure advance, flow, retraction, tolerance) and how to judge each test. Includes
+`make_maxflow_test.py`, which turns any slicer's vase-mode cylinder into a max-flow test tower
+(flow steps up with height) and tells you how to read it, so you don't need OrcaSlicer's GUI.
 
 **`apply_orca_quality.py`.** Patches OrcaSlicer process presets with the settings above. Plain
 Python 3, no packages. Dry-run mode, and a `.bak` copy before any change.
@@ -38,7 +40,8 @@ In Claude Code:
 /plugin install print-quality@fdm-print-quality
 ```
 
-Then ask things like "review my OrcaSlicer profile", "why is my seam so visible", or "apply the
+Restart Claude Code after installing; skills from a newly installed plugin load when a session
+starts. Then ask things like "review my OrcaSlicer profile", "why is my seam so visible", or "apply the
 print quality settings to my presets".
 
 Without Claude Code, read the skill files directly and run the script yourself:
