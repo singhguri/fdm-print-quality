@@ -14,6 +14,13 @@ decides both adhesion and how the bottom looks. Settings: `initial_layer_print_h
 Prusa: First layer height / width / speed. Cura: Initial Layer settings.
 Source: EL/first_layer_squish.html
 
+**Clean the plate with dish soap and warm water, not just alcohol.** Skin oil is the most common
+cause of a first layer that suddenly stops sticking. Rinse well and avoid touching the surface.
+
+**Make the first layer slightly wider and slower.** A first-layer line width around 120-125 % of
+the nozzle (0.5 mm on a 0.4 mm nozzle) at 20-30 mm/s presses more plastic into the bed.
+`initial_layer_line_width = 0.5`, `initial_layer_speed = 30`.
+
 **Use elephant-foot compensation of 0.1 to 0.2 mm on parts that must fit.** It shrinks the first
 layer to cancel the squish. Too much and small parts or brims let go. It does not fix a wrong Z
 offset. `elefant_foot_compensation = 0.15`, `elefant_foot_compensation_layers = 1`.

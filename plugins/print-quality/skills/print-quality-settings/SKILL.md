@@ -93,4 +93,11 @@ why a speciality PLA prints badly.
 `references/petg.md` has PETG starting points (temperatures, cooling, retraction, first layer)
 and fixes for its usual problems: stringing, blobs, poor or too-strong bed adhesion, weak layers,
 nozzle buildup, warping and rough tops. Read it whenever the user prints or plans to print PETG.
+
+`references/tpu.md` covers flexible filament: picking a hardness, starting settings, the five
+usual mistakes and multi-spool feeder caveats. Read it when the user prints TPU or flexible parts.
+
+`references/supports.md` has support settings that come off cleanly (type, Z gaps, interface,
+density by spacing, speeds) and explains which way OrcaSlicer measures the overhang angle. Read
+it when supports are hard to remove, scar the part, or fail.
 For calibration steps, use the `print-calibration` skill.
