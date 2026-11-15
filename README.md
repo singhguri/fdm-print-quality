@@ -21,7 +21,8 @@ the seam instead of stepping.*
 
 It includes the OrcaSlicer, PrusaSlicer and Cura setting names, gotchas found while testing (for
 example: a scarf length of 0 silently turns the scarf off), how to check the G-code really
-changed, and about 20 more vetted tips with sources, plus common advice that is wrong.
+changed, about 20 more vetted tips with sources, common advice that is wrong, starting points
+for 10 PLA types, and a PETG troubleshooting guide.
 
 **`print-calibration` skill.** The calibration order (first layer, temperature, max volumetric
 speed, pressure advance, flow, retraction, tolerance) and how to judge each test. Includes

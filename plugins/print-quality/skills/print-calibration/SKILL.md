@@ -64,6 +64,11 @@ table (also at the end of the G-code) saves the arithmetic. Measure from the bed
 - **Don't calibrate flow with calipers on a single-wall cube.** Layer wobble makes walls measure
   thick. Judge by top surfaces.
 - **Repeat steps 1 to 5 for each new filament type or brand**, not for a re-buy of the same spool.
+- **Dry the filament before step 1** for anything that absorbs moisture (PETG, TPU, nylon, and
+  PLA that pops or strings). Wet filament makes every later test misleading.
+- **Change one setting at a time.** Changing several at once hides which one helped.
+- For PETG-specific values and problems, see `references/petg.md` in the `print-quality-settings`
+  skill.
 - Step 0 and step 6 are per printer; redo step 0 after any nozzle or bed change.
 
 Sources: https://github.com/OrcaSlicer/OrcaSlicer/wiki/calibration_guide,

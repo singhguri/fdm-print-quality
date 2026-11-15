@@ -8,7 +8,7 @@
       "name": "print-quality",
       "source": "./plugins/print-quality",
       "description": "Brim ears, scarf seams, Arachne walls, variable layer height, calibration order, vetted tips, and a script that applies the settings to OrcaSlicer presets.",
-      "version": "0.3.1",
+      "version": "0.4.0",
       "author": { "name": "singhguri" },
       "category": "productivity"
     }

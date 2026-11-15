@@ -89,4 +89,8 @@ cases. Read it when the user wants more than the five rules or asks about a spec
 silk, PLA+, marble, wood, carbon fibre, glow, multi-colour): nozzle temperature, max volumetric
 flow, and which ones need a hardened nozzle. Read it when the user names a filament type or asks
 why a speciality PLA prints badly.
+
+`references/petg.md` has PETG starting points (temperatures, cooling, retraction, first layer)
+and fixes for its usual problems: stringing, blobs, poor or too-strong bed adhesion, weak layers,
+nozzle buildup, warping and rough tops. Read it whenever the user prints or plans to print PETG.
 For calibration steps, use the `print-calibration` skill.
