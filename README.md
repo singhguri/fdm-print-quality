@@ -29,6 +29,13 @@ speed, pressure advance, flow, retraction, tolerance) and how to judge each test
 `make_maxflow_test.py`, which turns any slicer's vase-mode cylinder into a max-flow test tower
 (flow steps up with height) and tells you how to read it, so you don't need OrcaSlicer's GUI.
 
+**`print-compare` skill.** When one print came out smoother than another, it works out why
+from the two G-code files instead of guessing. `compare_gcode.py` lists the settings that
+differ, shows key settings even when they match (so a shared setting isn't blamed), splits the
+plastic by line type (walls, solid infill, sparse infill, bridges), counts retractions per part
+per layer, and checks extruded volume against the STL. It reads `G2`/`G3` arc moves, which a
+`G1`-only parser misses. Plain Python 3, no packages.
+
 **`apply_orca_quality.py`.** Patches OrcaSlicer process presets with the settings above. Plain
 Python 3, no packages. Dry-run mode, and a `.bak` copy before any change.
 
